@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Helpline Numbers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light Sky Blue */
+            color: #333;
+            line-height: 1.6;
+            opacity: 0; /* Start fully transparent */
+            animation: fadeIn 1.5s ease-in-out forwards; /* Smooth fade-in animation */
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0.7;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideUp 1s ease-in-out forwards; /* Slide-up animation */
+            opacity: 0; /* Start fully transparent */
+        }
+
+        /* Slide-up Animation */
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0.5;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #2980b9; /* Slightly Darker Blue */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .helpline-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .helpline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #ecf0f1; /* Light Grayish Background */
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .helpline-item:hover {
+            background-color: #d5dbdb; /* Slightly Darker Gray */
+        }
+
+        .helpline-name {
+            font-weight: 600;
+            color: #34495e;
+            text-align: left;
+        }
+
+        .helpline-number {
+            color: #2980b9;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #55575a;
+            color: #fff;
+            font-size: 0.9em;
+            margin-top: 30px;
+            opacity: 0; /* Start fully transparent */
+            animation: fadeInFooter 1.5s ease-in-out 0.5s forwards; /* Delayed fade-in animation */
+        }
+
+        /* Fade-in Animation for Footer */
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .helpline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .helpline-number {
+                margin-top: 5px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fas fa-phone-alt"></i> Emergency Helpline Numbers</h1>
+
+    <ul class="helpline-list">
+        <li class="helpline-item">
+            <span class="helpline-name">NATIONAL EMERGENCY NUMBER</span>
+            <a href="tel:112" class="helpline-number">112</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">POLICE</span>
+            <a href="tel:100" class="helpline-number">100</a> or <a href="tel:112" class="helpline-number">112</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">FIRE</span>
+            <a href="tel:101" class="helpline-number">101</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">AMBULANCE</span>
+            <a href="tel:102" class="helpline-number">102</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Disaster Management Services</span>
+            <a href="tel:108" class="helpline-number">108</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Women Helpline</span>
+            <a href="tel:1091" class="helpline-number">1091</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Women Helpline - ( Domestic Abuse )</span>
+            <a href="tel:181" class="helpline-number">181</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Air Ambulance</span>
+            <a href="tel:9540161344" class="helpline-number">9540161344</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Aids Helpline</span>
+            <a href="tel:1097" class="helpline-number">1097</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Anti Poison ( New Delhi )</span>
+            <a href="tel:1066" class="helpline-number">1066</a> or <a href="tel:0111066" class="helpline-number">011-1066</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Disaster Management ( N.D.M.A )</span>
+            <a href="tel:1078" class="helpline-number">1078</a>, <a href="tel:01126701700" class="helpline-number">011-26701700</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">EARTHQUAKE / FLOOD / DISASTER ( N.D.R.F Headquaters )</span>
+            NDRF HELPLINE NO : <a href="tel:01124363260" class="helpline-number">011-24363260</a> , <a href="tel:9711077372" class="helpline-number">9711077372</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Railway Enquiry</span>
+            <a href="tel:139" class="helpline-number">139</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Senior Citizen Helpline</span>
+            <a href="tel:14567" class="helpline-number">14567</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Road Accident Emergency Service</span>
+            <a href="tel:1073" class="helpline-number">1073</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Road Accident Emergency Service On National Highway For Private Operators</span>
+            <a href="tel:1033" class="helpline-number">1033</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Kisan Call Centre</span>
+            <a href="tel:18001801551" class="helpline-number">18001801551</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Relief Commissioner For Natural Calamities</span>
+            <a href="tel:1070" class="helpline-number">1070</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Children In Difficult Situation</span>
+            <a href="tel:1098" class="helpline-number">1098</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">National Poisions Information Centre - AIIMS NEW DELHI ( 24*7 )</span>
+            <a href="tel:1800116117" class="helpline-number">1800116117</a> , <a href="tel:01126593677" class="helpline-number">011-26593677</a>, <a href="tel:01126589391" class="helpline-number">26589391</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Poision Information Centre ( CMC , Vellore )</span>
+            <a href="tel:18004251213" class="helpline-number">18004251213</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">Tourist Helpline</span>
+            <a href="tel:1363" class="helpline-number">1363</a> or <a href="tel:1800111363" class="helpline-number">1800111363</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">LPG Leak Helpline</span>
+            <a href="tel:1906" class="helpline-number">1906</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">KIRAN MENTAL HEALTH Helpline</span>
+            <a href="tel:18005990019" class="helpline-number">18005990019</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">CYBER CRIME HELPLINE</span>
+            <a href="tel:1930" class="helpline-number">1930</a>
+        </li>
+        <li class="helpline-item">
+            <span class="helpline-name">COVID 19 HELPLINE</span>
+            <a href="tel:01123978046" class="helpline-number">011-23978046</a> OR <a href="tel:1075" class="helpline-number">1075</a>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    <p>Stay safe and remember these helpline numbers in times of emergency.</p>
+</footer>
+
+</body>
+</html>

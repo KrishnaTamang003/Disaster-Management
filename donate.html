@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Disaster Relief - Donate Now</title>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header (Consistent with main site) -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                Disaster <span class="cursive-green">Management Hub!</span>
+            </div>
+            <nav>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" aria-label="Go to Home Section"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="index.html#alerts" aria-label="Go to Alerts Section"><i class="fa fa-triangle-exclamation"></i> Alerts</a></li>
+                        <li><a href="index.html#preparedness" aria-label="Go to Preparedness Section"><i class="fa fa-book"></i> Preparedness</a></li>
+                        <li><a href="index.html#recovery" aria-label="Go to Recovery Section"><i class="fa fa-building-circle-arrow-right"></i> Recovery</a></li>
+                        <li><a href="index.html#quick-links" aria-label="Go to Contact Section"><i class="fa fa-envelope"></i> Contact</a></li>
+                        <li><a href="donation.html" class="active" aria-label="Donate to Support Disaster Relief"><i class="fa fa-hand-holding-heart"></i> Donate</a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </header>
+
+        <!-- Donation Section -->
+        <section class="donation-hero">
+            <div class="donation-content">
+                <h1>Your Support Makes a Difference</h1>
+                <p>Help us provide critical aid to communities affected by disasters. Every donation, no matter the size, helps save lives and rebuild communities.</p>
+            </div>
+        </section>
+
+        <section class="donation-options">
+            <h2>Choose Your Donation Amount</h2>
+
+            <div class="donation-amounts">
+                <button class="amount-button">₹250</button>
+                <button class="amount-button">₹500</button>
+                <button class="amount-button">₹1000</button>
+                <button class="amount-button">₹2500</button>
+                <button class="amount-button">₹5000</button>
+                <button class="amount-button custom-amount">Custom Amount</button>
+            </div>
+
+            <div class="custom-donation-input" style="display: none;">
+                <label for="customAmount">Enter Custom Amount ($):</label>
+                <input type="number" id="customAmount" name="customAmount" min="1">
+            </div>
+
+            <button class="donate-button">Donate Now</button>
+        </section>
+
+        <section class="impact-section">
+            <h2>How Your Donation Helps</h2>
+            <ul>
+                <li><i class="fa fa-tint"></i> Provides clean water and sanitation supplies.</li>
+                <li><i class="fa fa-utensils"></i> Delivers food and emergency rations to families.</li>
+                <li><i class="fa fa-home"></i> Offers shelter and temporary housing solutions.</li>
+                <li><i class="fa fa-medkit"></i> Supplies medical assistance and healthcare.</li>
+            </ul>
+        </section>
+
+        <section class="partners-section">
+            <h2>Our Partners</h2>
+            <p>We are proud to partner with these organizations to maximize the impact of your donations.</p>
+            <div class="partners-grid">
+                <img src="Logo1 Partner.jpg" alt="Partner 1">
+                <img src="Logo2 Partner.webp" alt="Partner 2">
+                <img src="Logo3 Partner.jpg" alt="Partner 3">
+                <!-- Add more partner logos here -->
+            </div>
+        </section>
+
+        <!-- Footer (Consistent with main site) -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3 class="footer-logo">Disaster Management Hub</h3>
+                    <p>Your reliable source for real-time alerts, comprehensive preparedness information, and resources to assist in times of disaster.</p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i>   123-456-7890</span>
+                        <span><i class="fas fa-envelope"></i>   info@disasterhub.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html#alerts">Alerts</a></li>
+                        <li><a href="index.html#preparedness">Preparedness</a></li>
+                        <li><a href="donation.html">Donate</a></li>
+                        <li><a href="index.html#recovery">Recovery</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-form">
+                    <h2>Contact Us</h2>
+                    <form action="index.html" method="post">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                        <button type="submit" class="btn btn-big">
+                            <i class="fas fa-envelope"></i>
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © DisasterManagementHub.com | Noble Group of Institue-2025
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // JavaScript for Donation Page Functionality
+        const amountButtons = document.querySelectorAll('.amount-button');
+        const customAmountButton = document.querySelector('.custom-amount');
+        const customDonationInput = document.querySelector('.custom-donation-input');
+        const donateButton = document.querySelector('.donate-button');
+        let selectedAmount = null;
+
+        amountButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                amountButtons.forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                selectedAmount = button.textContent;
+                customDonationInput.style.display = 'none'; // Hide custom input if visible
+            });
+        });
+
+        customAmountButton.addEventListener('click', () => {
+            amountButtons.forEach(btn => btn.classList.remove('selected'));
+            customDonationInput.style.display = 'block';
+            selectedAmount = null;
+        });
+
+        donateButton.addEventListener('click', () => {
+            let donationAmount;
+            if (selectedAmount) {
+                donationAmount = selectedAmount;
+            } else {
+                const customAmountValue = document.getElementById('customAmount').value;
+                if (customAmountValue) {
+                    donationAmount = '$' + customAmountValue;
+                } else {
+                    alert('Please select a donation amount or enter a custom amount.');
+                    return;
+                }
+            }
+
+            alert(`Thank you for your donation of ${donationAmount}! (This is a demo)`);
+            // In a real implementation, you would process the donation here.
+        });
+
+        // smmoth Transitions
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Fade in effect when page loads
+    document.body.style.opacity = "1";
+
+    // Select all anchor tags that navigate to another page
+    document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default instant navigation
+            
+            const href = this.href; // Get link URL
+
+            // Apply fade-out effect
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = href; // Redirect after animation
+            }, 500); // Matches CSS transition duration
+        });
+    });
+});
+</script>
+
+    </script>
+
+</body>
+</html>

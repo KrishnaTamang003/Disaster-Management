@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alerts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            padding: 10px 20px;
+            background-color: #333; /* Change this as necessary for your theme */
+            color: #fff;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex; /* Use flexbox for logo alignment */
+            align-items: center; /* Vertically center the logo elements */
+            justify-content: center;
+        }
+
+        .logo {
+            display: flex; /* Enable flexbox for the logo */
+            align-items: center; /* Vertically center items */
+            font-size: 1.4rem;
+            font-weight: 900; /* Make the logo text bold */
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            color: #007bff; /* Default blue color; adjust as needed */
+            font-size: 1.5rem; /* Adjust icon size */
+        }
+
+        .cursive-green {
+            font-family: cursive; /* Or a specific cursive font */
+            color: #007bff; /* Emerald green */
+        }
+
+        .alerts-page {
+            padding: 30px;
+            margin: 30px auto;
+        }
+
+        .alerts-page h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            font-weight: normal;
+            margin-top: 0px;
+        }
+
+        .alerts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Evenly distribute items with space between */
+        }
+
+        .alert-item {
+            width: calc(50% - 10px); /* Two alerts per row with 10px space */
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: normal;
+            border-left: 5px solid transparent;
+            background: #fff;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+        }
+
+        .alert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .alert-item i {
+            font-size: 1.5rem;
+            margin-right: 12px;
+            color: #555;
+        }
+
+        .alert-content {
+            flex: 1;
+        }
+
+        .alert-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .alert-content p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .high-priority { border-left-color: #e74c3c; }
+        .medium-priority { border-left-color: #f39c12; }
+        .low-priority { border-left-color: #3498db; }
+
+        .high-priority { background-color: rgba(231, 76, 60, 0.05); }
+        .medium-priority { background-color: rgba(243, 156, 18, 0.05); }
+        .low-priority { background-color: rgba(52, 152, 219, 0.05); }
+
+        .alert-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .alert-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        /* Media query for smaller screens (tablets and phones) */
+        @media (max-width: 768px) {
+            .alerts-page {
+                padding: 10px;
+            }
+            .alerts-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .alert-item {
+                width: 95%; /* Take up most of the screen */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <div class="logo">
+            <i class="fa-solid fa-house-flood-water"></i>
+            Disaster <span class="cursive-green">Management Hub!</span>
+        </div>
+    </div>
+
+    <div class="alerts-page">
+        <h1>Disaster Alerts</h1>
+
+        <div class="alerts-container">
+            <!-- Alert Items -->
+            <div class="alert-item high-priority">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="alert-content">
+                    <h3>Heavy Rains - Mumbai</h3>
+                    <p>Alert: Heavy rainfall is expected in Mumbai and surrounding areas. Please avoid travel if possible. Waterlogging is likely in low-lying areas. Stay safe! Check local news for updates.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Heat Wave - Rajasthan</h3>
+                    <p>Alert: A heat wave is predicted for Rajasthan. Drink plenty of water and avoid being outside during the hottest part of the day. Protect yourself from the sun.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item low-priority">
+                <i class="fa fa-info-circle"></i>
+                <div class="alert-content">
+                    <h3>Power Outage - Bangalore</h3>
+                    <p>Notice: There will be a planned power outage in parts of Bangalore for maintenance. It will last for a few hours. Please plan accordingly. Check with BESCOM for details.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item high-priority">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="alert-content">
+                    <h3>Flooding - Assam</h3>
+                    <p>Alert: Major flooding is occurring in Assam due to heavy monsoon rains. Many villages are affected. Please seek higher ground if you are in a flood-prone area. Contact the local authorities for assistance.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Cyclone Warning - Tamil Nadu Coast</h3>
+                    <p>Alert: A cyclone is approaching the Tamil Nadu coast. Be prepared for strong winds and heavy rains. Secure your homes and follow evacuation orders if issued. Tune into All India Radio for updates.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item low-priority">
+                <i class="fa fa-info-circle"></i>
+                <div class="alert-content">
+                    <h3>Earthquake Drill - Delhi</h3>
+                    <p>Reminder: An earthquake preparedness drill is scheduled in Delhi. Practice "Drop, Cover, and Hold On". It's important to be ready for an earthquake. Stay informed and stay safe.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item high-priority">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="alert-content">
+                    <h3>Landslide Warning - Uttarakhand</h3>
+                    <p>Alert: There is a high risk of landslides in Uttarakhand due to recent heavy rains. Avoid travel to hilly areas if possible. Stay vigilant and watch for signs of ground movement.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Cold Wave - Himachal Pradesh</h3>
+                    <p>Alert: A severe cold wave is expected in Himachal Pradesh. Take precautions to stay warm. Protect yourself from frostbite. Check weather forecasts before traveling.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item low-priority">
+                <i class="fa fa-info-circle"></i>
+                <div class="alert-content">
+                    <h3>Tidal Surge Warning - Kolkata</h3>
+                    <p>Notice: A high tidal surge is expected in Kolkata due to an upcoming full moon. Be aware of potential flooding in coastal areas. Stay away from the Hooghly River banks during high tide.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Forest Fire - Bandipur National Park</h3>
+                    <p>Urgent: There's a raging forest fire in Bandipur National Park. Avoid visiting the area. Residents nearby should take precautionary measures.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item high-priority">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="alert-content">
+                    <h3>Chemical Leak - Industrial Area, Vizag</h3>
+                    <p>Emergency: There has been a chemical leak in an industrial area of Vizag. Evacuate the surrounding area immediately. Seek medical attention if you experience breathing difficulties.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item low-priority">
+                <i class="fa fa-info-circle"></i>
+                <div class="alert-content">
+                    <h3>Mosquito-Borne Disease Advisory - Kerala</h3>
+                    <p>Advisory: There's an increase in mosquito-borne diseases in Kerala. Use mosquito repellents, wear protective clothing, and maintain cleanliness in your surroundings.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Flash Flood Watch - Coastal Andhra Pradesh</h3>
+                    <p>Watch: A flash flood watch has been issued for coastal Andhra Pradesh. Stay updated on weather forecasts and be prepared to move to higher ground if necessary.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+            <div class="alert-item high-priority">
+                <i class="fa fa-exclamation-triangle"></i>
+                <div class="alert-content">
+                    <h3>Building Collapse - Construction Site, Chennai</h3>
+                    <p>Breaking: A building has collapsed at a construction site in Chennai. Rescue operations are underway. Avoid the area if possible.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+               <div class="alert-item medium-priority">
+                <i class="fa fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <h3>Heavy Snowfall - Jammu and Kashmir</h3>
+                    <p>Travel Advisory: Heavy snowfall is expected in Jammu and Kashmir. Roads may be blocked. Avoid unnecessary travel and check road conditions before you go.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+
+               <div class="alert-item low-priority">
+                <i class="fa fa-info-circle"></i>
+                <div class="alert-content">
+                    <h3>Wildfire Prevention Tips</h3>
+                    <p>Reminder: As the dry season approaches, review wildfire prevention tips. Properly dispose of cigarettes, clear dry vegetation around your home, and never leave a campfire unattended.</p>
+                    <a href="#">Know More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Your Safety, Our Priority: Stay informed, stay prepared, and remember, safety begins with you.</p>
+    </footer>
+
+</body>
+</html>

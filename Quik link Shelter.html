@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management - Find Safe Shelter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(map-background.jpg); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            color: #333;
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            width: 100%;
+            overflow: auto; /*Allow scrollbars when content overflows*/
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            color: linear-gradient(135deg, #0056b3, #009dff); /* This won't work as expected */
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 2.3em;
+            background: linear-gradient(135deg, #0056b3, #009dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        #location-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #city-select {
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: 1.5px solid #ddd;
+            font-size: 1.1em;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #city-select:focus {
+            border-color: #fff;
+            box-shadow: 0 0 8px rgb(1, 101, 250);
+        }
+
+        button {
+            background: linear-gradient(135deg, #0056b3, #009dff);
+            color: #fff;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2); /* Adjust the color for a better match */
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker shade of the main color */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.35); /* Adjust color here too */
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 86, 179, 0.35); /* And here */
+        }
+
+        button i {
+            margin-right: 8px;
+        }
+
+        /* Modern animations */
+        h1, p, #location-form {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #city-select {
+            animation-delay: 0.3s;
+        }
+
+        button {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fa fa-house-damage"></i> Find a Safe Shelter</h1>
+    <p>
+        Select your city to locate nearby safe shelters and emergency resources. We are for general guidance during disasters like floods, earthquakes, or hurricanes. In an actual emergency, always follow the instructions of local authorities and emergency services. Stay prepared, keep emergency contacts handy, and have an evacuation plan ready. Your safety is our priority.
+    </p>
+
+    <form id="location-form">
+        <select id="city-select">
+            <option value="">Choose Your City</option>
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="chennai">Chennai</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="ahmedabad">Ahmedabad</option>
+            <option value="pune">Pune</option>
+        </select>
+        <button type="button" onclick="findShelter()"><i class="fa fa-search"></i> Locate Shelters</button>
+    </form>
+</div>
+
+<script>
+    function findShelter() {
+        const city = document.getElementById("city-select").value;
+
+        if (!city) {
+            alert("Please select a city to proceed.");
+            return;
+        }
+
+        let mapUrl = "";
+        switch (city) {
+            case "delhi":
+                mapUrl = "https://www.google.com/maps?q=community+center+shelter+delhi";
+                break;
+            case "mumbai":
+                mapUrl = "https://www.google.com/maps?q=municipal+school+shelter+mumbai";
+                break;
+            case "kolkata":
+                mapUrl = "https://www.google.com/maps?q=community+hall+shelter+kolkata";
+                break;
+            case "chennai":
+                mapUrl = "https://www.google.com/maps?q=government+building+shelter+chennai";
+                break;
+            case "bangalore":
+                mapUrl = "https://www.google.com/maps?q=public+auditorium+shelter+bangalore";
+                break;
+            case "hyderabad":
+                mapUrl = "https://www.google.com/maps?q=function+hall+shelter+hyderabad";
+                break;
+            case "ahmedabad":
+                mapUrl = "https://www.google.com/maps?q=community+center+shelter+ahmedabad";
+                break;
+            case "pune":
+                mapUrl = "https://www.google.com/maps?q=community+hall+shelter+pune";
+                break;
+            default:
+                alert("Sorry, shelter information is currently unavailable for this city.");
+                return;
+        }
+
+        window.open(mapUrl, "_blank");
+    }
+</script>
+
+</body>
+</html>

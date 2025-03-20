@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Aid Guidance</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(207, 216, 220, 0.604), rgba(236, 239, 241, 0.3));
+            color: #34495e;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #363a37bf; /* Match the heading color */
+            justify-content: center;
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            color: #007bff;
+            font-size: 1.6rem;
+        }
+
+        .cursive-green {
+            font-family: cursive;
+            color: #218838;
+        }
+
+        /* Heading Styling */
+        h1 {
+            color: #28a745;
+            margin-bottom: 70px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2.8em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        
+
+        h1:hover {
+            transform: scale(1.1);
+            color: #218838;
+        }
+
+        /* Aid Section Styling */
+        .aid-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 35px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .aid-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .aid-content {
+            flex: 1;
+            padding-right: 50px;
+            text-align: left;
+        }
+
+        .aid-section h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.7em;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .steps li:before {
+            content: '\f058'; /* Checkmark icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #2ecc71;
+            font-size: 1.2em;
+        }
+
+        /* Image Styling */
+        .aid-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+            text-align: center;
+        }
+
+        .aid-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Reverse Layout */
+        .aid-section reverse {
+            flex-direction: row-reverse;
+        }
+
+        .aid-section.reverse .aid-content {
+            padding-left: 50px;
+            padding-right: 0;
+        }
+
+        /* Animations */
+        h1, .aid-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards ease-out;
+        }
+
+        .aid-section:nth-child(even) {
+            transform: translateX(30px);
+            animation: fadeInRight 0.8s forwards ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px; /* Reduced margin for smaller screens */
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                padding-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            .logo i {
+                font-size: 1.4rem;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 40px;
+            }
+
+            .aid-section {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .aid-content {
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .aid-section.reverse {
+                flex-direction: column;
+            }
+
+            .aid-section.reverse .aid-content {
+                padding-left: 0;
+            }
+
+            .aid-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .steps li {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo -->
+    <div class="logo">
+        <i class="fas fa-house-flood-water"></i>
+        Disaster <span class="cursive-green">Management Hub!</span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1>First Aid Guidance</h1>
+
+    <!-- CPR Section -->
+    <section class="aid-section">
+        <div class="aid-content">
+            <h2><i class="fas fa-heartbeat"></i> CPR (Cardiopulmonary Resuscitation)</h2>
+            <ul class="steps">
+                <li><p><strong>Check for responsiveness:</strong> Gently tap the person and shout, "Are you OK?"</p></li>
+                <li><p><strong>Call emergency services:</strong> If the person is unresponsive, immediately call for help.</p></li>
+                <li><p><strong>Begin chest compressions:</strong> Place the heel of one hand over the center of the
+                    person's chest, put the other hand on top. Push hard and fast (100-120 compressions per minute)
+                    about 2 inches deep.</p></li>
+            </ul>
+        </div>
+        <div class="aid-image">
+            <img src="CPR image.webp" alt="CPR guidance">
+        </div>
+    </section>
+
+    <!-- Wound Care Section -->
+    <section class="aid-section reverse">
+        <div class="aid-image">
+            <img src="wound care.webp" alt="Wound Care guidance">
+        </div>
+        <div class="aid-content">
+            <h2><i class="fas fa-bandage"></i> Wound Care</h2>
+            <ul class="steps">
+                <li><p><strong>Wash your hands:</strong> Before attending to any wound, make sure your hands are clean.</p></li>
+                <li><p><strong>Stop the bleeding:</strong> Apply direct pressure to the wound with a clean cloth.</p></li>
+                <li><p><strong>Clean the wound:</strong> Gently wash the wound with mild soap and water. Avoid harsh
+                    scrubbing.</p></li>
+                <li><p><strong>Apply antibiotic ointment:</strong> Put a thin layer of antibiotic ointment to help
+                    prevent infection.</p></li>
+                <li><p><strong>Cover the wound:</strong> Cover the wound with a clean bandage. Change the bandage
+                    daily.</p></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Burn Treatment Section -->
+    <section class="aid-section">
+        <div class="aid-content">
+            <h2><i class="fas fa-burn"></i> Burn Treatment</h2>
+            <ul class="steps">
+                <li><p><strong>Cool the burn:</strong> Immediately cool the burn by holding it under cool (not cold)
+                    running water for 10-20 minutes.</p></li>
+                <li><p><strong>Cover with a sterile bandage:</strong> Apply a sterile, non-adhesive bandage to the burn.</p></li>
+                <li><p><strong>Pain relief:</strong> You can take over-the-counter pain relievers, such as ibuprofen or
+                    acetaminophen.</p></li>
+                <li><p><strong>Seek medical attention:</strong> If the burn is severe (deep, large, or on sensitive
+                    areas), seek medical attention immediately.</p></li>
+            </ul>
+        </div>
+        <div class="aid-image">
+            <img src="burn-care Background Removed.png" alt="Burn Treatment guidance">
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p><strong>Note:</strong> This information is for guidance. In any emergency, we strongly suggest contacting
+        <a href="https://www.google.com/maps">nearby hospitals</a> or emergency services as soon as possible for professional medical
+        assistance.
+    </p>
+</footer>
+
+</body>
+</html>

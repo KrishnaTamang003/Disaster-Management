@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management System - Modern UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header/Navigation -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                Disaster <span class="cursive-green">Management Hub!</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero" class="active"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#alerts"><i class="fa fa-triangle-exclamation"></i> Alerts</a></li>
+                    <li><a href="#quick-links"><i class="fa fa-book"></i> Preparedness</a></li>
+                    <li><a href="#preparedness"><i class="fa fa-building-circle-arrow-right"></i> Reports</a></li>
+                    <li><a href="#footer"><i class="fa fa-envelope"></i> Contact</a></li>
+                    <li><a href="donate.html"><i class="fa fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="slideshow">
+                <img src="Photo1.jpg" alt="Slide 1">
+                <img src="Photo2.jpeg" alt="Slide 2">
+                <img src="Photo3.jpeg" alt="Slide 3">
+                <img src="Photo4.webp" alt="Slide 4">
+            </div>
+            <div class="gradient-overlay"></div>
+            <div class="hero-content">
+                <h1 class="fade-in-title">Stay Informed, Stay Safe.</h1>
+                <p>Empowering communities with real-time alerts, emergency resources, and disaster response tools. Your safety, our priority.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for information, resources, or locations...">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Alerts Section -->
+        <section class="alerts" id="alerts">
+            <h2><i class="fa fa-bell"></i>Critical Alerts</h2>
+            <p class="section-description"> Stay updated with the latest critical alerts. Your safety is our primary concern.</p>
+            <div class="alert-list">
+                <div class="alert-item high-priority">
+                    <div class="alert-content">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <div>
+                            <h3>Heavy Rainfall Warning-Banglore</h3>
+                            <p>Heavy rainfall expected in Cityville. Evacuate low-lying areas immediately.</p>
+                            <a href="@">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert-item medium-priority">
+                    <div class="alert-content">
+                        <i class="fa fa-exclamation-circle"></i>
+                        <div>
+                            <h3>Air Quality Advisory-Delhi</h3>
+                            <p>Air quality advisory in effect for Townsburg. Limit outdoor activities.</p>
+                            <a href="@">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert-item low-priority">
+                    <div class="alert-content">
+                        <i class="fa fa-info-circle"></i>
+                        <div>
+                            <h3>Scheduled Power Outage-Hydrabad</h3>
+                            <p>Power outage scheduled for Village Creek on 10th October for maintenance.</p>
+                            <a href="@">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="alert.html"  class="view-all-button">View All Alerts</a>
+        </section>
+
+        <!-- Quick Links / Contact Section -->
+        <section class="quick-links" id="quick-links">
+            <h2><i class="fa fa-link"></i>Quick Links!</h2>
+            <p class="section-description">Access essential resources and information quickly. </p>
+            <div class="link-grid">
+                <div class="link-card">
+                    <i class="fa fa-phone"></i>
+                    <h3><a href="helpline.html">Emergency Contacts</a></h3>
+                    <p>Find essential contact numbers for immediate assistance.</p>
+                </div>
+                <div class="link-card">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <h3><a href="Quik link Shelter.html">Shelter Locations</a></h3>
+                    <p>Locate nearby emergency shelters in your area.</p>
+                </div>
+                <div class="link-card">
+                    <i class="fa fa-medkit"></i>
+                    <h3><a href="Quick links aid.html">First Aid Guide</a></h3>
+                    <p>Learn basic first aid procedures for common injuries.</p>
+                </div>
+                <div class="link-card">
+                    <i class="fa fa-clipboard-list"></i>
+                    <h3><a href="https://www.ready.gov/plan">Emergency Plan Checklist</a></h3>
+                    <p>Create a personalized emergency plan for your household.</p>
+                </div>
+                <div class="link-card">
+                    <i class="fa fa-newspaper"></i>
+                    <h3><a href="https://www.wcdm.co.in/">News Updates</a></h3>
+                    <p>Stay up to date with current events.</p>
+                </div>
+                <div class="link-card">
+                    <i class="fa fa-hands-helping"></i>
+                    <h3><a href="https://www.volunteermatch.org/search/orgs.jsp?r=20.0&l=Bengaluru%2C+Karnataka%2C+India">Volunteer Opportunities</a></h3>
+                    <p>Find opportunities to help your community.</p>
+                </div>
+            </div>
+        </section>
+
+
+      <!-- Disaster Information Section -->
+<section class="disaster-info" id="preparedness">
+    <h2><i class="fa fa-earth-americas"></i> Disaster Informations</h2>
+        <p class="section-description"> Get comprehensive information on various disasters and step-up for your volunteer.</p>
+    <div class="disaster-slider-container">
+        <button class="slider-arrow left-arrow" aria-label="Scroll Left"><i class="fa fa-chevron-left"></i></button>
+        <div class="disaster-grid" id="disasterGrid">
+        </div>
+        <button class="slider-arrow right-arrow" aria-label="Scroll Right"><i class="fa fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Volunteer Section -->
+    <div class="volunteer-section">
+        <h3>Want to Help On-Site?</h3>
+        <p>Be a part of the disaster response team! Volunteer your time and skills to directly assist those affected.</p>
+        <a href="form.html" class="volunteer-button">Fill Volunteer Form</a>
+    </div>
+</section>
+
+<!-- Footer -->
+        <footer>
+            <div class="footer-content" id="footer">
+                <div class="footer-section about">
+                    <h3 class="footer-logo">Disaster Management Hub</h3>
+                    <p>Your reliable source for real-time alerts, comprehensive preparedness information, and resources to assist in times of disaster.</p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i>  123-456-7890</span>
+                        <span><i class="fas fa-envelope"></i>  info@disasterhub.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="!"><i class="fab fa-facebook"></i></a>
+                        <a href="!"><i class="fab fa-instagram"></i></a>
+                        <a href="!"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                    <li><a href="#alerts"> Alerts</a></li>
+                    <li><a href="#quick-links"> Preparedness</a></li>
+                    <li><a href="#preparedness"> Reports</a></li>
+                    <li><a href="donate.html"> Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-form">
+                    <h2>Join Us</h2>
+                    <form action="index.html" method="post">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                        <button type="submit" class="btn btn-big">
+                            <i class="fas fa-envelope"></i>
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © DisasterManagementHub.com | Noble Group of Institute-2025
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+           document.addEventListener("DOMContentLoaded", function () {
+               const disasters = [
+                   {
+                       img: "Flood.avif",
+                       title: "Floods - Kerala",
+                       desc: "Learn about flood risks, safety measures, and recovery strategies.",
+                       link: "@"
+                   },
+                   {
+                       img: "Earthquake.avif",
+                       title: "Earthquakes - Bihar",
+                       desc: "Understand earthquake preparedness, safety during an earthquake, and post-earthquake recovery.",
+                       link: "@"
+                   },
+                   {
+                       img: "Wildfires.avif",
+                       title: "Wildfires - Chennai",
+                       desc: "Protect yourself from wildfires with prevention tips, evacuation plans, and safety guidelines.",
+                       link: "@"
+                   },
+                   {
+                       img: "Cylone.jpeg",
+                       title: "Cyclones - West Bengal",
+                       desc: "Prepare for cyclones with emergency planning and survival strategies.",
+                       link: "@"
+                   },
+                   {
+                       img: "landslide.jpeg",
+                       title: "Landslides - Uttarakhand",
+                       desc: "Stay safe from landslides with precautionary measures and early warnings.",
+                       link: "@"
+                   },
+                   {
+        img: "Kumbh Mela large gatherig.jpg",
+        title: "Stampede - Religious Gatherings (Kumbh Mela)",
+        desc: "Be aware of crowd safety measures and emergency exit strategies during large gatherings.",
+        link: "!"
+    },
+    {
+        img: "Tornado west bengal.png",
+        title: "Tornadoes - West Bengal",
+        desc: "Learn how to protect yourself from tornadoes with emergency shelter plans and safety drills.",
+        link: "@"
+    }       
+               ];
+               
+
+               const disasterGrid = document.getElementById("disasterGrid");
+
+               disasters.forEach(disaster => {
+                   const card = document.createElement("div");
+                   card.classList.add("disaster-card");
+
+                   card.innerHTML = `
+                       <img src="${disaster.img}" alt="${disaster.title}">
+                       <h3>${disaster.title}</h3>
+                       <p>${disaster.desc}</p>
+                       <a href="${disaster.link}">Read More</a>
+                   `;
+
+                   disasterGrid.appendChild(card);
+               });
+
+
+           });
+
+   const disasterSliderContainer = document.querySelector('.disaster-slider-container');
+   const disasterGrid = document.getElementById('disasterGrid');
+   const leftArrow = document.querySelector('.left-arrow');
+   const rightArrow = document.querySelector('.right-arrow');
+
+   leftArrow.addEventListener('click', () => {
+       disasterGrid.scrollLeft -= 300;
+   });
+
+   rightArrow.addEventListener('click', () => {
+       disasterGrid.scrollLeft += 300;
+   });
+   </script>
+</body>
+</html>
