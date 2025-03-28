@@ -9,6 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stripe.js library -->
+    <style>
+    .StripeElement {
+        background-color: white;
+        padding: 0.7rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .StripeElement--focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    #card-errors {
+        color: #dc3545; /* Red color for errors */
+        margin-top: 0.5rem;
+    }
+    </style>
 </head>
 <body>
 
@@ -55,11 +77,17 @@
             </div>
 
             <div class="custom-donation-input" style="display: none;">
-                <label for="customAmount">Enter Custom Amount ($):</label>
+                <label for="customAmount">Enter Custom Amount (₹):</label>
                 <input type="number" id="customAmount" name="customAmount" min="1">
             </div>
 
-            <button class="donate-button">Donate Now</button>
+            <button id="show-payment-link-button" class="donate-button">Donate Now</button> <!-- Updated -->
+
+            <div id="payment-link-section" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+                <p>You will be redirected to a secure payment gateway to complete your donation.</p>
+                <a id="payment-link" href="#" class="donate-button" target="_blank">Proceed to Payment</a>
+            </div>
+
         </section>
 
         <section class="impact-section">
@@ -90,8 +118,8 @@
                     <h3 class="footer-logo">Disaster Management Hub</h3>
                     <p>Your reliable source for real-time alerts, comprehensive preparedness information, and resources to assist in times of disaster.</p>
                     <div class="contact">
-                        <span><i class="fas fa-phone"></i>   123-456-7890</span>
-                        <span><i class="fas fa-envelope"></i>   info@disasterhub.com</span>
+                        <span><i class="fas fa-phone"></i>  123-456-7890</span>
+                        <span><i class="fas fa-envelope"></i>  info@disasterhub.com</span>
                     </div>
                     <div class="socials">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -134,7 +162,9 @@
         const amountButtons = document.querySelectorAll('.amount-button');
         const customAmountButton = document.querySelector('.custom-amount');
         const customDonationInput = document.querySelector('.custom-donation-input');
-        const donateButton = document.querySelector('.donate-button');
+        const showPaymentLinkButton = document.getElementById('show-payment-link-button');
+        const paymentLinkSection = document.getElementById('payment-link-section');
+        const paymentLink = document.getElementById('payment-link');
         let selectedAmount = null;
 
         amountButtons.forEach(button => {
@@ -152,49 +182,50 @@
             selectedAmount = null;
         });
 
-        donateButton.addEventListener('click', () => {
+       showPaymentLinkButton.addEventListener('click', () => {
             let donationAmount;
             if (selectedAmount) {
                 donationAmount = selectedAmount;
             } else {
                 const customAmountValue = document.getElementById('customAmount').value;
                 if (customAmountValue) {
-                    donationAmount = '$' + customAmountValue;
+                    donationAmount = '₹' + customAmountValue;
                 } else {
                     alert('Please select a donation amount or enter a custom amount.');
                     return;
                 }
             }
 
-            alert(`Thank you for your donation of ${donationAmount}! (This is a demo)`);
-            // In a real implementation, you would process the donation here.
+            // Generate the payment link
+            const paymentGatewayLink = `https://example-payment-gateway.com/payment?amount=${donationAmount}¤cy=INR`; // Replace with your payment gateway URL
+            paymentLink.href = paymentGatewayLink;
+            paymentLinkSection.style.display = 'block'; // Show the link section
+            showPaymentLinkButton.style.display = 'none'; // Hide donate Button
         });
+
 
         // smmoth Transitions
 
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Fade in effect when page loads
-    document.body.style.opacity = "1";
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fade in effect when page loads
+            document.body.style.opacity = "1";
 
-    // Select all anchor tags that navigate to another page
-    document.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default instant navigation
-            
-            const href = this.href; // Get link URL
+            // Select all anchor tags that navigate to another page
+            document.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default instant navigation
 
-            // Apply fade-out effect
-            document.body.classList.add("fade-out");
+                    const href = this.href; // Get link URL
 
-            setTimeout(() => {
-                window.location.href = href; // Redirect after animation
-            }, 500); // Matches CSS transition duration
+                    // Apply fade-out effect
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.location.href = href; // Redirect after animation
+                    }, 500); // Matches CSS transition duration
+                });
+            });
         });
-    });
-});
-</script>
-
     </script>
 
 </body>
