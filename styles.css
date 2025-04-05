@@ -982,15 +982,13 @@ h1 {
     padding: 0.7rem 1.5rem; /* Adjust button padding */
     font-size: 0.8rem; /* Adjust button font size */
 }
-
-
-
+}
 /* Footer Styles */
 footer {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 3rem 0;
+    padding: 4rem 0; /* Increased padding for larger screens */
     margin-top: 1rem;
     border-top: 3px solid #333;
     position: relative;
@@ -998,49 +996,53 @@ footer {
     font-size: 1rem;
 }
 
+/* Footer Content - Responsive Grid */
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min-width */
+    gap: 3rem;
+    max-width: 1400px; /* Increased max-width */
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 4rem; /* More padding for larger screens */
 }
 
 .footer-section {
     text-align: left;
 }
 
+/* Section Headers */
 .footer-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem; /* Slightly larger */
+    margin-bottom: 1.2rem;
     color: #fff;
     border-bottom: 2px solid #777;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.6rem;
 }
 
+/* About Section */
 .footer-section.about .footer-logo {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
 
 .footer-section.about p {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased for readability */
     color: #ddd;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .footer-section.about .contact span {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     color: #ddd;
 }
 
+/* Social Media Links */
 .footer-section.about .socials a {
     display: inline-block;
-    margin-right: 0.5rem;
-    font-size: 1.1rem;
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
     color: #fff;
     transition: color 0.3s ease;
 }
@@ -1049,13 +1051,14 @@ footer {
     color: #007bff;
 }
 
+/* Links Section */
 .footer-section.links ul {
     list-style: none;
     padding: 0;
 }
 
 .footer-section.links ul li {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-section.links ul li a {
@@ -1068,10 +1071,11 @@ footer {
     color: #fff;
 }
 
+/* Contact Form */
 .footer-section.contact-form form {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 .footer-section.contact-form form input.contact-input,
@@ -1079,8 +1083,8 @@ footer {
     background: #444;
     color: #ddd;
     border: none;
-    border-radius: 5px;
-    padding: 0.7rem;
+    border-radius: 6px;
+    padding: 0.8rem;
     font-size: 1rem;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -1088,7 +1092,7 @@ footer {
 
 .footer-section.contact-form form textarea.contact-input {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .footer-section.contact-form form input.contact-input:focus,
@@ -1097,26 +1101,88 @@ footer {
     background-color: #555;
 }
 
+/* Submit Button */
 .footer-section.contact-form form button.btn {
     background: #007bff;
     color: #fff;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
     transition: color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
     width: auto;
-    align-items: baseline;
 }
 
-.footer-section.contact-form form button.btn:hover{
+.footer-section.contact-form form button.btn:hover {
     background-color: #0056b3;
 }
 
+/* Footer Bottom */
 .footer-bottom {
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 1.2rem;
+    font-size: 1rem;
     color: #ccc;
+}
+
+/* Responsive code for mobile footer */
+/* Responsive Styles for Mobile Devices */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 2rem 1rem; /* Reduce padding for smaller screens */
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        text-align: center; /* Center text on mobile */
+    }
+
+    .footer-section h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .footer-section.about .footer-logo {
+        font-size: 1.3rem;
+    }
+
+    .footer-section.about p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .footer-section.about .contact span {
+        font-size: 0.95rem;
+    }
+
+    .footer-section.about .socials a {
+        font-size: 1.2rem;
+        margin-right: 0.6rem;
+    }
+
+    .footer-section.links ul li {
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-section.links ul li a {
+        font-size: 0.95rem;
+    }
+
+    .footer-section.contact-form form button.btn {
+        width: 100%; /* Full-width button for better UX */
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.85rem;
+        padding: 1rem 0;
+    }
 }
 
 /* search bar ko reponsive code;
