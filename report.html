@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Disaster Management Portal</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* Internal CSS */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management Report Portal</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+       /* styles  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Base font size (usually 16px) */
+    -webkit-text-size-adjust: 100%; /* Prevent iOS font scaling */
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    margin: 0; /* Remove default body margin */
     padding: 0;
     background: linear-gradient(135deg, rgba(207, 216, 220, 0.604), rgba(236, 239, 241, 0.3));
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
 }
 
-.container {
-    width: 100vw;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+/* Removed .container as it wasn't used in the provided HTML body */
 
-a {
+a { /* Style links if they are added later */
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -37,43 +49,53 @@ a:hover {
     color: #0056b3;
 }
 
-/* Report Incident Section */
+/*------------------------------------*\
+    $REPORT INCIDENT SECTION
+\*------------------------------------*/
 #report-incident {
-    background-color: #f9f9f9;
-    padding: 3rem 0;
+    background-color: #f8f9fa;
+    padding: 2.5rem 1rem; /* Padding top/bottom and left/right */
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #dee2e6;
 }
 
 .report-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%; /* Take full width of parent */
+    max-width: 800px; /* Limit max width on larger screens */
+    margin: 0 auto; /* Center the container */
     padding: 2rem;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 #report-incident h2 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 5vw, 2rem); /* Responsive font size */
     margin-bottom: 1rem;
-    color: #333;
+    color: #212529;
+    font-weight: 700;
 }
 
 #report-incident p {
-    color: #555;
+    color: #495057;
     margin-bottom: 2rem;
+    font-size: clamp(1rem, 2.5vw, 1.05rem); /* Responsive font size */
+    line-height: 1.65; /* Slightly more line height */
+    max-width: 700px; /* Constrain line length */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*------------------------------------*\
+    $FORM STYLES
+\*------------------------------------*/
 #incident-report-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* Form groups fill width */
 }
 
 .form-group {
-    width: 100%;
     margin-bottom: 1.5rem;
     text-align: left;
 }
@@ -81,131 +103,237 @@ a:hover {
 .form-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
+    margin-bottom: 0.6rem;
+    color: #343a40;
+    font-size: 0.95rem;
 }
 
+/* Base Input Styles (Text, Email, Select, Textarea, etc.) */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="datetime-local"],
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem; /* Keep >= 1rem (16px) for mobile accessibility */
     font-family: inherit;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #495057;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none; /* Basic reset for browser default styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
+/* Focus States */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Specific Styling for Select */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); /* Basic dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem; /* Make space for arrow */
+}
+
+/* Textarea */
 .form-group textarea {
     resize: vertical;
+    min-height: 120px;
 }
 
-.form-group input[type="file"] {
-    padding: 0.5rem;
-    border: none;
-}
 
+
+
+/* Submit Button */
 .submit-button {
-        background: linear-gradient(135deg, #e44d26, #f16529); /* Solid blue color */
+    background: linear-gradient(135deg, #e44d26, #f16529);
     color: #fff;
-    padding: 1rem 2.2rem;
+    padding: 0.9rem 2rem;
     border: none;
     border-radius: 7px;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: flex-start; /* Aligns button to the left */
-    margin-left: 0;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
-    letter-spacing: 0.5px; /* Small letter spacing */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: flex-start; /* Align left on larger screens */
+    margin-top: 0.5rem;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
+    text-align: center; /* Ensure text is centered */
+    width: auto; /* Default width */
+    display: inline-block; /* Allow align-self to work */
 }
 
 .submit-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
+/*------------------------------------*\
+    $RESPONSIVE STYLES
+\*------------------------------------*/
 
+/* Medium Screens (Tablet portrait and down) */
 @media (max-width: 768px) {
+    #report-incident {
+        padding: 2rem 1rem;
+    }
+
     .report-container {
-        width: 95%;
         padding: 1.5rem;
     }
 
+    #report-incident h2 {
+        /* font-size uses clamp, adjusts automatically */
+    }
+
+    #report-incident p {
+        /* font-size uses clamp, adjusts automatically */
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    /* Ensure inputs maintain good padding */
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group input[type="datetime-local"],
     .form-group select,
     .form-group textarea {
-        font-size: 0.9rem;
+        padding: 0.9rem 1rem; /* Consistent padding */
     }
 
     .submit-button {
-        font-size: 1rem;
+        width: 100%; /* Full width button */
+        padding: 1rem; /* Generous padding for tapping */
+        font-size: 1.1rem;
+        align-self: stretch; /* Override align-self */
     }
 }
-</style>
+
+/* Small Screens (Phones) */
+@media (max-width: 480px) {
+    #report-incident {
+        padding: 1.5rem 0.5rem; /* Less horizontal padding */
+    }
+
+    .report-container {
+        padding: 1.5rem 1rem; /* Consistent internal padding */
+        border-radius: 0; /* Edge-to-edge */
+        box-shadow: none;
+        /* Border already added by #report-incident */
+    }
+
+     #report-incident h2 {
+         /* font-size uses clamp, adjusts automatically */
+         margin-bottom: 0.8rem;
+     }
+
+    #report-incident p {
+        /* font-size uses clamp, adjusts automatically */
+        line-height: 1.6;
+    }
+
+    .form-group label {
+        font-size: 0.88rem; /* Slightly smaller label */
+        margin-bottom: 0.5rem;
+    }
+
+    /* Inputs maintain 1rem font-size from base */
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="datetime-local"],
+    .form-group select,
+    .form-group textarea {
+        padding: 0.85rem 1rem; /* Slightly reduced vertical padding */
+    }
+
+    /* File input button padding adjustment */
+     .form-group input[type="file"]::file-selector-button {
+        padding: 0.65rem 1rem;
+     }
+
+    .submit-button {
+        font-size: 1rem; /* Slightly smaller text */
+        padding: 0.9rem; /* Adjust padding */
+    }
+}
+
+    </style>
 </head>
 <body>
 
+    <section id="report-incident">
+        <div class="report-container">
+            <h2>Report an Incident!</h2>
+            <p>Help us respond quickly and effectively by reporting any disaster-related incidents you observe. Your report can make a critical difference by allowing us to provide timely aid and resources to those in need.</p>
 
+            <form id="incident-report-form">
+                <div class="form-group">
+                    <label for="incident-type">Type of Incident:</label>
+                    <select id="incident-type" name="incident-type" required>
+                        <option value="">-- Select Incident Type --</option>
+                        <option value="flood">Flood</option>
+                        <option value="earthquake">Earthquake</option>
+                        <option value="wildfire">Wildfire</option>
+                        <option value="hurricane">Hurricane</option>
+                        <option value="landslide">Landslide</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
 
-<section id="report-incident">
-    <div class="report-container">
-        <h2>Report an Incident!</h2>
-        <p>Help us respond quickly and effectively by reporting any disaster-related incidents you observe. Your report can make a critical difference by allowing us to provide timely aid and resources to those in need.</p>
+                <div class="form-group">
+                    <label for="location">Location of Incident:</label>
+                    <input type="text" id="location" name="location" placeholder="Enter address or coordinates" required>
+                </div>
 
-        <form id="incident-report-form">
-            <div class="form-group">
-                <label for="incident-type">Type of Incident:</label>
-                <select id="incident-type" name="incident-type" required>
-                    <option value="">-- Select Incident Type --</option>
-                    <option value="flood">Flood</option>
-                    <option value="earthquake">Earthquake</option>
-                    <option value="wildfire">Wildfire</option>
-                    <option value="hurricane">Hurricane</option>
-                    <option value="landslide">Landslide</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="description">Description of Incident:</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Describe what you observed" required></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="location">Location of Incident:</label>
-                <input type="text" id="location" name="location" placeholder="Enter address or coordinates" required>
-            </div>
+                <div class="form-group">
+                    <label for="date-time">Date and Time of Incident:</label>
+                    <input type="datetime-local" id="date-time" name="date-time" required>
+                </div>
 
-            <div class="form-group">
-                <label for="description">Description of Incident:</label>
-                <textarea id="description" name="description" rows="4" placeholder="Describe what you observed" required></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="reporter-name">Your Name:</label>
+                    <input type="text" id="reporter-name" name="reporter-name" placeholder="Your Name" required>
+                </div>
 
-            <div class="form-group">
-                <label for="date-time">Date and Time of Incident:</label>
-                <input type="datetime-local" id="date-time" name="date-time" required>
-            </div>
+                 <div class="form-group">
+                    <label for="reporter-email">Your Email:</label>
+                    <input type="email" id="reporter-email" name="reporter-email" placeholder="Your Email" required>
+                </div>
 
-            <div class="form-group">
-                <label for="reporter-name">Your Name:</label>
-                <input type="text" id="reporter-name" name="reporter-name" placeholder="Your Name" required>
-            </div>
+                <div class="form-group">
+                    <label for="image-upload">Upload Image (Optional):</label>
+                    <input type="file" id="image-upload" name="image-upload" accept="image/*">
+                </div>
 
-             <div class="form-group">
-                <label for="reporter-email">Your Email:</label>
-                <input type="email" id="reporter-email" name="reporter-email" placeholder="Your Email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="image-upload">Upload Image (Optional):</label>
-                <input type="file" id="image-upload" name="image-upload" accept="image/*">
-            </div>
-
-            <button type="submit" class="submit-button">Submit Report</button>
-        </form>
-    </div>
-</section>
+                <button type="submit" class="submit-button">Submit Report</button>
+            </form>
+        </div>
+    </section>
 
 </body>
 </html>
